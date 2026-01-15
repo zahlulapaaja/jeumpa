@@ -25,7 +25,7 @@ class AuthController extends Controller
     {
         if (Auth::check()) return redirect()->route('home');
         // return view('auth.login');
-        return view('welcome');
+        return view('pages.welcome');
     }
 
     public function redirectToGoogle()

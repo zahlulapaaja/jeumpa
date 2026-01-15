@@ -23,6 +23,6 @@ Route::prefix('auth')->name('auth.')->group(function () {
 });
 
 // Home 
-Route::middleware('auth')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-});
+// Route::middleware('auth')->group(function () {
+Route::get('/', [HomeController::class, 'index'])->name('home');
+// });

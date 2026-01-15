@@ -65,6 +65,8 @@
                         <!--begin::Form-->
                         <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="{{ route('home') }}" action="{{ route('auth.login.submit') }}" method="POST">
                             @csrf
+                            @method('POST')
+
                             <!--begin::Heading-->
                             <div class="text-center mb-11">
                                 <!--begin::Title-->
@@ -146,10 +148,10 @@
                     <!--end::Languages-->
                     <!--begin::Links-->
                     <div class="d-flex fw-semibold text-primary fs-base gap-5">
-                        <!-- <a href="pages/team.html" target="_blank">Terms</a> -->
-                        <!-- <a href="pages/pricing/column.html" target="_blank">Plans</a> -->
-                        <!-- <a href="pages/contact.html" target="_blank">Contact Us</a> -->
-                        <a href="https://www.instagram.com/tpaalmukhayyarah/" target="_blank">Hubungi Kami</a>
+                        <a href="pages/team.html" target="_blank">Terms</a>
+                        <a href="pages/pricing/column.html" target="_blank">Plans</a>
+                        <a href="pages/contact.html" target="_blank">Contact Us</a>
+                        <!-- <a href="https://www.instagram.com/tpaalmukhayyarah/" target="_blank">Hubungi Kami</a> -->
                     </div>
                     <!--end::Links-->
                 </div>
@@ -162,20 +164,19 @@
                 <div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100">
                     <!--begin::Logo-->
                     <a href="#" class="mb-0 mb-lg-12">
-                        <img alt="Logo" src="assets/media/logos/tpa.png" class="h-100px h-lg-175px" />
+                        <img alt="Logo" src="assets/media/logos/custom-1.png" class="h-80px h-lg-75px" />
                     </a>
                     <!--end::Logo-->
                     <!--begin::Image-->
-                    <img class="d-none d-lg-block mx-auto w-275px w-md-50 w-xl-500px mb-10 mb-lg-20" src="assets/media/misc/screen.png" alt="" />
+                    <img class="d-none d-lg-block mx-auto w-275px w-md-50 w-xl-500px mb-10 mb-lg-20" src="assets/media/misc/auth-screens.png" alt="" />
                     <!--end::Image-->
                     <!--begin::Title-->
-                    <h1 class="d-none d-lg-block text-white fs-2qx fw-bolder text-center mb-7">Mendidik dengan Iman, <br> Menginspirasi dengan Akhlak</h1>
+                    <h1 class="d-none d-lg-block text-white fs-2qx fw-bolder text-center mb-7">Mengawal Anggaran, Menjaga Amanah.</h1>
                     <!--end::Title-->
                     <!--begin::Text-->
                     <div class="d-none d-lg-block text-white fs-base text-center">
-                        Tempat pembinaan santri untuk memahami, menghafal, dan menghayati Al-Qur’an
-                        dalam suasana yang nyaman dan penuh perhatian.Bersama TPA Al Mukhayyarah menuju
-                        generasi muslim yang cerdas dan berkarakter Qur’ani.
+                        Aplikasi JEUMPA hadir sebagai sistem pemantauan realisasi anggaran dan administrasi
+                        guna mendukung tata kelola yang efektif, efisien, dan akuntabel dalam setiap tahapan pelaksanaan kegiatan.
                     </div>
                     <!--end::Text-->
                 </div>

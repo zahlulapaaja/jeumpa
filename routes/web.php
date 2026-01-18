@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SharedFilesController;
+use App\Models\SharedFiles;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -26,3 +28,8 @@ Route::prefix('auth')->name('auth.')->group(function () {
 // Route::middleware('auth')->group(function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 // });
+
+// SNLIK
+Route::prefix('snlik')->name('snlik.')->group(function () {
+    Route::get('/', [SharedFilesController::class, 'index'])->name('shared_files');
+});

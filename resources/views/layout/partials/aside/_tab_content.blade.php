@@ -776,7 +776,7 @@
                 <!--begin::Items-->
                 <div class="mb-10">
                     <!--begin::Item-->
-                    <a href="#" class="custom-list d-flex align-items-center px-5 py-4">
+                    <a href="{{ route('snlik.shared_files') }}" class="custom-list d-flex align-items-center px-5 py-4">
                         <!--begin::Symbol-->
                         <div class="symbol symbol-40px me-5">
                             <span class="symbol-label">
@@ -1045,7 +1045,7 @@
                     <!--begin:Menu sub-->
                     <div class="menu-sub menu-sub-accordion">
                         <!--begin:Menu item-->
-                        <div class="menu-item">
+                        <div class="menu-item d-none">
                             <!--begin:Menu link-->
                             <a class="menu-link" href="#">
                                 <span class="menu-bullet">
@@ -1059,11 +1059,11 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="{{ route('snlik.shared_files') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Template Dokumen</span>
+                                <span class="menu-title">Shared Files</span>
                             </a>
                             <!--end:Menu link-->
                         </div>

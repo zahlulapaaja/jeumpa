@@ -18,8 +18,14 @@
             <!--end::Card title-->
             <!--begin::Card toolbar-->
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                <div class="card-toolbar gap-3">
+                    <div id="kt_shared_files_export_buttons"></div>
+                </div>
                 <!--begin::Tambah file-->
-                <a href="#" class="btn btn-primary">Tambah File</a>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_shared_file">
+                    <i class="ki-duotone ki-plus fs-2 me-1"></i>
+                    Tambah File
+                </button>
                 <!--end::Tambah file-->
             </div>
             <!--end::Card toolbar-->
@@ -60,14 +66,18 @@
                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#modal_edit_shared_file" data-id="{{ $d->id }}" data-nama="{{ $d->nama }}" data-file="{{ $d->file_path }}">
-                                        Edit
-                                    </a>
+                                    <a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#modal_edit_shared_file"
+                                        data-id="{{ $d->id }}"
+                                        data-nama="{{ $d->nama }}"
+                                        data-file="{{ $d->file_path }}">Edit</a>
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3" data-kt-shared-files-filter="delete_row">Delete</a>
+                                    <a href="#" class="menu-link px-3" data-kt-shared-files-filter="delete_row"
+                                        data-id="{{ $d->id }}"
+                                        data-delete-url="{{ route('snlik.shared-files.destroy', $d->id) }}">
+                                        Delete</a>
                                 </div>
                                 <!--end::Menu item-->
                             </div>
@@ -83,8 +93,76 @@
     </div>
     <!--end::Shared Files-->
 
-    <!--begin::Modal-->
-    <div class="modal fade" id="modal_edit_shared_file" tabindex="-1" aria-hidden="true">
+    <!--begin::Modals-->
+    <!--begin::Modal Tambah File-->
+    <div class="modal fade" id="modal_add_shared_file" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <div class="modal-content">
+
+                <!--begin::Modal header-->
+                <div class="modal-header">
+                    <h2>Tambah File</h2>
+                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <i class="ki-duotone ki-cross fs-1"></i>
+                    </div>
+                </div>
+                <!--end::Modal header-->
+
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                    <form id="form_add_shared_file" enctype="multipart/form-data">
+                        @csrf
+
+                        <!-- Nama File -->
+                        <div class="mb-5">
+                            <label class="required form-label">Nama File</label>
+                            <input type="text" name="nama"
+                                class="form-control form-control-solid"
+                                placeholder="Contoh: Surat Tugas Pendataan"
+                                required>
+                        </div>
+
+                        <!-- Jenis File (opsional) -->
+                        <div class="mb-5">
+                            <label class="form-label">Jenis File</label>
+                            <select name="jenis" class="form-select form-select-solid">
+                                <option value="" hidden>-- Pilih Jenis --</option>
+                                <option value="Format Template">Format Template</option>
+                            </select>
+                        </div>
+
+                        <!-- Upload File -->
+                        <div class="mb-5">
+                            <label class="required form-label">Upload File</label>
+                            <input type="file" name="file"
+                                class="form-control form-control-solid"
+                                accept=".pdf,.doc,.docx,.xls,.xlsx,.zip"
+                                required>
+                            <div class="form-text">
+                                Format yang diizinkan: PDF, DOC, DOCX, XLS, XLSX, ZIP
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="text-center">
+                            <button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="indicator-label">Simpan</span>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+                <!--end::Modal body-->
+
+            </div>
+        </div>
+    </div>
+    <!--end::Modal Tambah File-->
+    <!--begin::Modal Edit File-->
+    <div class=" modal fade" id="modal_edit_shared_file" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered mw-650px">
             <div class="modal-content">
                 <!--begin::Modal header-->
@@ -150,7 +228,8 @@
             </div>
         </div>
     </div>
-    <!--end::Modal-->
+    <!--end::Modal Edit File-->
+    <!--end::Modals-->
 
 
     @push('scripts')
@@ -222,6 +301,41 @@
                     Swal.fire({
                         icon: 'error',
                         text: msg
+                    });
+                }
+            });
+        });
+
+        $('#form_add_shared_file').on('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            $.ajax({
+                url: "{{ route('snlik.shared-files.store') }}",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    Swal.fire({
+                        title: 'Menyimpan...',
+                        allowOutsideClick: false,
+                        didOpen: () => Swal.showLoading()
+                    });
+                },
+                success: function(res) {
+                    Swal.fire({
+                        icon: 'success',
+                        text: res.message ?? 'File berhasil ditambahkan'
+                    }).then(() => {
+                        location.reload(); // atau insert row DataTable
+                    });
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        text: xhr.responseJSON?.message ?? 'Gagal menyimpan file'
                     });
                 }
             });

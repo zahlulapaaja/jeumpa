@@ -13,11 +13,19 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+
+            // RELASI KE PEGAWAI
+            // ada di migrasi yang lain 
+            // $table->foreignId('pegawai_id')->nullable()->constrained('pegawais')->nullOnDelete();
+
+            // IDENTITAS LOGIN (SSO)
+            $table->string('sso_id')->nullable()->unique(); // NIP
+            $table->string('sso_provider')->nullable(); // internal, google, dll
+
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('google_id')->nullable()->unique();
             $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();

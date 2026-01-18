@@ -31,5 +31,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // SNLIK
 Route::prefix('snlik')->name('snlik.')->group(function () {
-    Route::get('/', [SharedFilesController::class, 'index'])->name('shared_files');
+    Route::get('/shared-files', [SharedFilesController::class, 'index'])->name('shared-files');
+    Route::put('/shared-files/{id}', [SharedFilesController::class, 'update'])->name('shared-files.update');
 });

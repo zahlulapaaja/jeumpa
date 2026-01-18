@@ -13,7 +13,7 @@ class SharedFiles extends Model
 
     protected $fillable = [
         'nama',
-        'path',
         'jenis',
+        'file_path',
     ];
 }

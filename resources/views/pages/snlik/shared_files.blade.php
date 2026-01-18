@@ -48,8 +48,7 @@
                         </td>
                         <td class="text-center">{{ $d->jenis }}</td>
                         <td class="text-center">
-                            <a href="#"
-                                class="btn btn-sm btn-light-primary">
+                            <a href="{{ asset('storage/'. $d->file_path) }}" class="btn btn-sm btn-light-primary" target="_blank">
                                 <i class="ki-outline ki-file-down fs-5"></i>
                             </a>
                         </td>
@@ -61,7 +60,9 @@
                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">Edit</a>
+                                    <a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#modal_edit_shared_file" data-id="{{ $d->id }}" data-nama="{{ $d->nama }}" data-file="{{ $d->file_path }}">
+                                        Edit
+                                    </a>
                                 </div>
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
@@ -82,9 +83,150 @@
     </div>
     <!--end::Shared Files-->
 
+    <!--begin::Modal-->
+    <div class="modal fade" id="modal_edit_shared_file" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <div class="modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header">
+                    <h2>Edit File</h2>
+                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <i class="ki-duotone ki-cross fs-1"></i>
+                    </div>
+                </div>
+                <!--end::Modal header-->
+
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                    <form id="form_edit_shared_file" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+
+                        <input type="hidden" name="id" id="edit_file_id">
+
+                        <!-- Nama File -->
+                        <div class="mb-5">
+                            <label class="required form-label">Nama File</label>
+                            <input type="text" name="nama" id="edit_nama"
+                                class="form-control form-control-solid" required>
+                        </div>
+
+                        <!-- File Lama -->
+                        <div class="mb-5">
+                            <label class="form-label">File Saat Ini</label>
+                            <div id="old_file_wrapper">
+                                <a href="#" target="_blank"
+                                    id="old_file_link"
+                                    class="btn btn-sm btn-light-primary">
+                                    <i class="ki-outline ki-file-down fs-5 me-1"></i>
+                                    Lihat File
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Upload Baru -->
+                        <div class="mb-5">
+                            <label class="form-label">Upload File Baru (opsional)</label>
+                            <input type="file" name="file"
+                                class="form-control form-control-solid"
+                                accept=".pdf,.doc,.docx,.xls,.xlsx">
+                            <div class="form-text">
+                                Kosongkan jika tidak ingin mengganti file
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="text-center">
+                            <button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="indicator-label">Simpan</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!--end::Modal body-->
+            </div>
+        </div>
+    </div>
+    <!--end::Modal-->
+
+
     @push('scripts')
     <script src="{{ asset('assets/js/custom/pages/shared_files.js') }}"></script>
     <script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
+    <script>
+        "use strict";
+
+        // isi modal saat klik Edit
+        document.addEventListener('click', function(e) {
+            const btn = e.target.closest('[data-bs-target="#modal_edit_shared_file"]');
+            if (!btn) return;
+
+            document.getElementById('edit_file_id').value = btn.dataset.id;
+            document.getElementById('edit_nama').value = btn.dataset.nama;
+
+            const oldFileLink = document.getElementById('old_file_link');
+            if (btn.dataset.file) {
+                oldFileLink.href = `/storage/${btn.dataset.file}`;
+                oldFileLink.classList.remove('d-none');
+            } else {
+                oldFileLink.classList.add('d-none');
+            }
+        });
+
+        // submit ajax
+        $('#form_edit_shared_file').on('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const formData = new FormData(form);
+            formData.append('_method', 'PUT');
+            const id = $('#edit_file_id').val();
+            const urlTemplate = "{{ route('snlik.shared-files.update', ['id' => '__id__']) }}";
+            const url = urlTemplate.replace('__id__', id);
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                beforeSend: function() {
+                    Swal.fire({
+                        title: 'Menyimpan...',
+                        allowOutsideClick: false,
+                        didOpen: () => Swal.showLoading()
+                    });
+                },
+                success: function(res) {
+                    Swal.fire({
+                        icon: 'success',
+                        text: res.message ?? 'File berhasil diperbarui',
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        location.reload(); // atau update row tanpa reload
+                    });
+                },
+                error: function(xhr) {
+                    let msg = 'Terjadi kesalahan';
+                    if (xhr.responseJSON?.message) {
+                        msg = xhr.responseJSON.message;
+                    }
+
+                    Swal.fire({
+                        icon: 'error',
+                        text: msg
+                    });
+                }
+            });
+        });
+    </script>
+
     @endpush
 </x-default-layout>

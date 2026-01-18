@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('nama');
-            $table->string('path')->nullable(); // path file
             $table->string('jenis', 50)->default('Template');
+            $table->string('file_path')->nullable(); // path file
 
             $table->timestamps();
         });

@@ -31,8 +31,8 @@
 
 
 
-@include('layout.components._drawers')
+<!-- include('layout.components._drawers') -->
 @include('layout.components._scrolltop')
-@include('layout.components._modals')
+<!-- include('layout.components._modals') -->
 
 @endsection

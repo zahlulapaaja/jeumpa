@@ -13,21 +13,33 @@ class UserSeeder extends Seeder
         // 1. ADMIN => udah ada di role seeder
         // 2. PJK PROV
         $prov = User::updateOrCreate(
-            ['email' => 'prov@example.com'],
+            ['email' => '1100@bps.go.id'],
             [
                 'name' => 'Aku PJK Provinsi',
-                'password' => Hash::make('password123'),
+                'password' => Hash::make('admin1100'),
             ]
         );
         $prov->syncRoles(['pjk_prov']);
 
-        // 3. PJK Kako
-        for ($i = 1; $i <= 20; $i++) {
+        // 1101 sampai 1118
+        for ($i = 1101; $i <= 1118; $i++) {
             $kako = User::updateOrCreate(
-                ['email' => "kako{$i}@example.com"],
+                ['email' => "bps{$i}@bps.go.id"],
                 [
-                    'name' => "Kako {$i}",
-                    'password' => Hash::make('password123'),
+                    'name' => "User {$i}",
+                    'password' => Hash::make('bps' . $i),
+                ]
+            );
+            $kako->syncRoles(['pjk_kako']);
+        }
+
+        // 1171 sampai 1175
+        for ($i = 1171; $i <= 1175; $i++) {
+            $kako = User::updateOrCreate(
+                ['email' => "bps{$i}@bps.go.id"],
+                [
+                    'name' => "User {$i}",
+                    'password' => Hash::make('bps' . $i),
                 ]
             );
             $kako->syncRoles(['pjk_kako']);

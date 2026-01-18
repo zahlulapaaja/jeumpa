@@ -5,15 +5,15 @@
         <!--begin::Page title-->
         <div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap mt-n5 mt-lg-0 me-lg-2 pb-2 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
             <!--begin::Heading-->
-            <h1 class="text-gray-900 fw-bold my-0 fs-2">Dashboard</h1>
+            <h1 class="text-gray-900 fw-bold my-0 fs-2">Shared Files</h1>
             <!--end::Heading-->
             <!--begin::Breadcrumb-->
             <ul class="breadcrumb fw-semibold fs-base my-1">
                 <li class="breadcrumb-item text-muted">
                     <a href="index.html" class="text-muted text-hover-primary">Home</a>
                 </li>
-                <li class="breadcrumb-item text-muted">Dashboards</li>
-                <li class="breadcrumb-item text-gray-900">Default</li>
+                <li class="breadcrumb-item text-muted">SNLIK</li>
+                <li class="breadcrumb-item text-gray-900">Shared Files</li>
             </ul>
             <!--end::Breadcrumb-->
         </div>

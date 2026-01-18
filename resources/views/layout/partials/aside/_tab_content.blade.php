@@ -811,7 +811,7 @@
         <div class="menu menu-column menu-fit menu-rounded menu-title-gray-600 menu-icon-gray-500 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-semibold fs-5 px-6 my-5 my-lg-0" id="kt_aside_menu" data-kt-menu="true">
             <div id="kt_aside_menu_wrapper" class="menu-fit">
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion d-none">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -1070,77 +1070,6 @@
                         <!--end:Menu item-->
                     </div>
                     <!--end:Menu sub-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item pt-5">
-                    <!--begin:Menu content-->
-                    <div class="menu-content">
-                        <span class="menu-heading fw-bold text-uppercase fs-7">Help</span>
-                    </div>
-                    <!--end:Menu content-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="_blank">
-                        <span class="menu-icon">
-                            <i class="ki-duotone ki-rocket fs-2">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                            </i>
-                        </span>
-                        <span class="menu-title">Components</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo7/layout-builder.html">
-                        <span class="menu-icon">
-                            <i class="ki-duotone ki-abstract-13 fs-2">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                            </i>
-                        </span>
-                        <span class="menu-title">Layout Builder</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs" target="_blank">
-                        <span class="menu-icon">
-                            <i class="ki-duotone ki-abstract-26 fs-2">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                            </i>
-                        </span>
-                        <span class="menu-title">Documentation</span>
-                    </a>
-                    <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item">
-                    <!--begin:Menu link-->
-                    <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog" target="_blank">
-                        <span class="menu-icon">
-                            <i class="ki-duotone ki-code fs-2">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                                <span class="path3"></span>
-                                <span class="path4"></span>
-                            </i>
-                        </span>
-                        <span class="menu-title">Changelog v8.2.1</span>
-                    </a>
-                    <!--end:Menu link-->
                 </div>
                 <!--end:Menu item-->
             </div>

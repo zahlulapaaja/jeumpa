@@ -27,7 +27,7 @@
     </li>
     <!--end::Nav item-->
     <!--begin::Nav item-->
-    <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Subscription">
+    <li class="nav-item mb-2 d-none" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Subscription">
         <!--begin::Nav link-->
         <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-500 btn-active-light" data-bs-toggle="tab" href="#kt_aside_nav_tab_subscription">
             <i class="ki-duotone ki-chart-simple fs-2x">
@@ -41,7 +41,7 @@
     </li>
     <!--end::Nav item-->
     <!--begin::Nav item-->
-    <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Tasks">
+    <li class="nav-item mb-2 d-none" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Tasks">
         <!--begin::Nav link-->
         <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-500 btn-active-light" data-bs-toggle="tab" href="#kt_aside_nav_tab_tasks">
             <i class="ki-duotone ki-shield-tick fs-2x">
@@ -53,7 +53,7 @@
     </li>
     <!--end::Nav item-->
     <!--begin::Nav item-->
-    <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Notifications">
+    <li class="nav-item mb-2 d-none" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Notifications">
         <!--begin::Nav link-->
         <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-500 btn-active-light" data-bs-toggle="tab" href="#kt_aside_nav_tab_notifications">
             <i class="ki-duotone ki-abstract-26 fs-2x">
@@ -65,7 +65,7 @@
     </li>
     <!--end::Nav item-->
     <!--begin::Nav item-->
-    <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Authors">
+    <li class="nav-item mb-2 d-none" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="Authors">
         <!--begin::Nav link-->
         <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-500 btn-active-light" data-bs-toggle="tab" href="#kt_aside_nav_tab_authors">
             <i class="ki-duotone ki-add-files fs-2x">

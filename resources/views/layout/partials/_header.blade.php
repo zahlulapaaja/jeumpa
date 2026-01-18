@@ -36,7 +36,7 @@
         </div>
         <!--end::Wrapper-->
         <!--begin::Toolbar wrapper-->
-        <div class="d-flex flex-shrink-0">
+        <div class="d-flex flex-shrink-0 d-none">
             <!--begin::Invite user-->
             <div class="d-flex ms-3">
                 <a href="#" class="btn btn-flex flex-center btn-light btn-color-gray-600 btn-active-primary w-40px w-md-auto h-40px px-0 px-md-6" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">

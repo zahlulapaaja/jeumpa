@@ -4,7 +4,7 @@
     <div class="aside-primary d-flex flex-column align-items-lg-center flex-row-auto">
         <!--begin::Logo-->
         <div class="aside-logo d-none d-lg-flex flex-column align-items-center flex-column-auto py-10" id="kt_aside_logo">
-            <a href="index.html">
+            <a href="#">
                 <img alt="Logo" src="{{ asset('assets/media/logos/demo7.svg') }}" class="h-35px" />
             </a>
         </div>
@@ -38,7 +38,7 @@
                 <!--begin::Footer-->
                 <div class="flex-column-auto pt-10 px-5" id="kt_aside_secondary_footer">
                     <a href="https://preview.keenthemes.com/html/metronic/docs" class="btn btn-bg-light btn-color-gray-600 btn-flex btn-active-color-primary flex-center w-100" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-trigger="hover" data-bs-offset="0,5" data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
-                        <span class="btn-label">Docs & Components</span>
+                        <span class="btn-label">Template Dokumen</span>
                         <i class="ki-duotone ki-document btn-icon fs-4 ms-2">
                             <span class="path1"></span>
                             <span class="path2"></span>

@@ -1,5 +1,5 @@
 <!--begin::Quick links-->
-<div class="d-flex align-items-center mb-2">
+<div class="d-flex align-items-center mb-2 d-none">
     <!--begin::Menu wrapper-->
     <div class="btn btn-icon btn-active-color-primary btn-color-gray-500 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-start" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="Quick links">
         <i class="ki-duotone ki-educare fs-2 fs-lg-1">
@@ -89,7 +89,7 @@
 </div>
 <!--end::Quick links-->
 <!--begin::Activities-->
-<div class="d-flex align-items-center mb-3">
+<div class="d-flex align-items-center mb-3 d-none">
     <!--begin::Drawer toggle-->
     <div class="btn btn-icon btn-active-color-primary btn-color-gray-500 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-start" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="Activity Logs" id="kt_activities_toggle">
         <i class="ki-duotone ki-chart-simple fs-2 fs-lg-1">
@@ -103,7 +103,7 @@
 </div>
 <!--end::Activities-->
 <!--begin::Notifications-->
-<div class="d-flex align-items-center mb-2">
+<div class="d-flex align-items-center mb-2 d-none">
     <!--begin::Menu wrapper-->
     <div class="btn btn-icon btn-active-color-primary btn-color-gray-500 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-start" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="Notifications">
         <i class="ki-duotone ki-element-11 fs-2 fs-lg-1">
@@ -652,11 +652,11 @@
         <!--end::Menu separator-->
         <!--begin::Menu item-->
         <div class="menu-item px-5">
-            <a href="account/overview.html" class="menu-link px-5">My Profile</a>
+            <a href="#" class="menu-link px-5">My Profile</a>
         </div>
         <!--end::Menu item-->
         <!--begin::Menu item-->
-        <div class="menu-item px-5">
+        <div class="menu-item px-5 d-none">
             <a href="apps/projects/list.html" class="menu-link px-5">
                 <span class="menu-text">My Projects</span>
                 <span class="menu-badge">
@@ -666,7 +666,7 @@
         </div>
         <!--end::Menu item-->
         <!--begin::Menu item-->
-        <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0">
+        <div class="menu-item px-5 d-none" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0">
             <a href="#" class="menu-link px-5">
                 <span class="menu-title">My Subscription</span>
                 <span class="menu-arrow"></span>
@@ -718,15 +718,15 @@
         </div>
         <!--end::Menu item-->
         <!--begin::Menu item-->
-        <div class="menu-item px-5">
+        <div class="menu-item px-5 d-none">
             <a href="account/statements.html" class="menu-link px-5">My Statements</a>
         </div>
         <!--end::Menu item-->
         <!--begin::Menu separator-->
-        <div class="separator my-2"></div>
+        <!-- <div class="separator my-2"></div> -->
         <!--end::Menu separator-->
         <!--begin::Menu item-->
-        <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0">
+        <div class="menu-item px-5 d-none" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0">
             <a href="#" class="menu-link px-5">
                 <span class="menu-title position-relative">Language
                     <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
@@ -779,13 +779,13 @@
         </div>
         <!--end::Menu item-->
         <!--begin::Menu item-->
-        <div class="menu-item px-5 my-1">
+        <div class="menu-item px-5 d-none my-1">
             <a href="account/settings.html" class="menu-link px-5">Account Settings</a>
         </div>
         <!--end::Menu item-->
         <!--begin::Menu item-->
         <div class="menu-item px-5">
-            <a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+            <a href="#" class="menu-link px-5">Sign Out</a>
         </div>
         <!--end::Menu item-->
     </div>

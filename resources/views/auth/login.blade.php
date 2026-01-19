@@ -196,7 +196,7 @@
     <script src="assets/js/scripts.bundle.js"></script>
     <!--end::Global Javascript Bundle-->
     <!--begin::Custom Javascript(used for this page only)-->
-    <script src="assets/js/custom/authentication/sign-in/general.js"></script>
+    <!-- <script src="assets/js/custom/authentication/sign-in/general.js"></script> -->
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>

@@ -25,12 +25,12 @@ Route::prefix('auth')->name('auth.')->group(function () {
 });
 
 // Home 
-// Route::middleware('auth')->group(function () {
-Route::get('/', [HomeController::class, 'index'])->name('home');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+});
 
 // SNLIK
-Route::prefix('snlik')->name('snlik.')->group(function () {
+Route::middleware('auth')->prefix('snlik')->name('snlik.')->group(function () {
     Route::get('/shared-files', [SharedFilesController::class, 'index'])->name('shared-files');
     Route::post('/shared-files', [SharedFilesController::class, 'store'])->name('shared-files.store');
     Route::put('/shared-files/{id}', [SharedFilesController::class, 'update'])->name('shared-files.update');

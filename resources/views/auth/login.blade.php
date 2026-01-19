@@ -6,22 +6,23 @@
     <base href="{{ route('home') }}" />
     <title>Login - Jeumpa</title>
     <meta charset="utf-8" />
-    <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
-    <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+    <meta name="description" content="Jeumpa adalah aplikasi monitoring administrasi kegiatan di BPS Provinsi Aceh yang digunakan untuk mengelola, memantau, dan mendokumentasikan pelaksanaan kegiatan secara terintegrasi, akurat, dan efisien." />
+    <meta name="keywords" content="Jeumpa, BPS Provinsi Aceh, monitoring kegiatan, administrasi kegiatan, sistem informasi, aplikasi internal BPS, statistik Aceh, manajemen kegiatan" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Login - Jeumpa" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Metronic by Keenthemes" />
+    <meta name="author" content="BPS Provinsi Aceh" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jeumpa | Aplikasi Monitoring Administrasi Kegiatan BPS Provinsi Aceh" />
+    <meta property="og:description" content="Aplikasi monitoring administrasi kegiatan BPS Provinsi Aceh untuk mendukung pengelolaan kegiatan yang transparan dan terdokumentasi." />
+    <meta property="og:site_name" content="Jeumpa - BPS Provinsi Aceh" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <script>
         // Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }
@@ -192,8 +193,8 @@
         var hostUrl = "assets/";
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
-    <script src="assets/plugins/global/plugins.bundle.js"></script>
-    <script src="assets/js/scripts.bundle.js"></script>
+    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
     <!--end::Global Javascript Bundle-->
     <!--begin::Custom Javascript(used for this page only)-->
     <!-- <script src="assets/js/custom/authentication/sign-in/general.js"></script> -->

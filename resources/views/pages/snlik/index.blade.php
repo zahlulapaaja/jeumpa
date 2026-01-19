@@ -1,3 +1,5 @@
 <x-default-layout title="Dashboard SNLIK">
-    tes
+    Selamat Datang di Aplikasi Jeumpa
+    <br>
+    Klik menu SNLIK di menu
 </x-default-layout>

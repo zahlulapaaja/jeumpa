@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
         // 1. ADMIN => udah ada di role seeder
         // 2. PJK PROV
         $prov = User::updateOrCreate(
-            ['email' => '1100@bps.go.id'],
+            ['email' => 'bps1100@bps.go.id'],
             [
                 'name' => 'Aku PJK Provinsi',
                 'password' => Hash::make('admin1100'),

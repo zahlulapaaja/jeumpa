@@ -21,12 +21,14 @@
                 <div class="card-toolbar gap-3">
                     <div id="kt_shared_files_export_buttons"></div>
                 </div>
+                @hasanyrole('admin|pjk_prov')
                 <!--begin::Tambah file-->
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_shared_file">
                     <i class="ki-duotone ki-plus fs-2 me-1"></i>
                     Tambah File
                 </button>
                 <!--end::Tambah file-->
+                @endhasanyrole
             </div>
             <!--end::Card toolbar-->
         </div>
@@ -60,6 +62,7 @@
                         </td>
                         <td class="text-center">{{ $d->updated_at }}</td>
                         <td class="text-end">
+                            @if (auth()->check() && auth()->user()->hasAnyRole(['admin', 'pjk_prov']))
                             <a href="#" class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
                             <!--begin::Menu-->
@@ -82,6 +85,9 @@
                                 <!--end::Menu item-->
                             </div>
                             <!--end::Menu-->
+                            @else
+                            -
+                            @endif
                         </td>
                     </tr>
                     @endforeach
